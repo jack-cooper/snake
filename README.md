@@ -1,3 +1,3 @@
 # Snake
 
-Everyone's favourite serpentine hero, but this time made by me using `ggez`!
+This is an implementation of the game Snake, using [`ggez`](https://github.com/ggez/ggez).
