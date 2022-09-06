@@ -1,0 +1,9 @@
+[package]
+name = "snake"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fastrand = "1.8.0"
+ggez = "0.8.0-rc0"
+glam = { version = "0.21.3", features = ["mint"] }
