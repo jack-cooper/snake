@@ -1,5 +1,4 @@
-use ggez::input::keyboard::KeyCode;
-use glam::IVec2;
+use ggez::{glam::IVec2, input::keyboard::KeyCode};
 
 /// A direction which a [Snake](crate::snake::Snake) can travel in.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]

@@ -8,7 +8,7 @@ mod world;
 
 pub use world::World;
 
-use glam::{IVec2, Vec2};
+use ggez::glam::{IVec2, Vec2};
 
 /// The size of the world, i.e. the number of unique locations on a given axis.
 const GRID_SIZE: IVec2 = IVec2::from_array([30, 20]);

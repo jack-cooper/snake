@@ -86,31 +86,25 @@ impl EventHandler<ggez::GameError> for World {
         const CLEAR_COLOR: graphics::Color = graphics::Color::new(0.09, 0.09, 0.09, 1.0);
 
         let canvas = if self.active() {
-            let mut canvas =
-                graphics::Canvas::from_frame(ctx, graphics::CanvasLoadOp::Clear(CLEAR_COLOR));
+            let mut canvas = graphics::Canvas::from_frame(ctx, CLEAR_COLOR);
 
             self.snake.draw(&mut canvas);
             self.food.draw(&mut canvas);
 
             canvas
         } else {
-            let mut canvas =
-                graphics::Canvas::from_frame(ctx, graphics::CanvasLoadOp::Clear(CLEAR_COLOR));
+            let mut canvas = graphics::Canvas::from_frame(ctx, CLEAR_COLOR);
 
             let mut score_display = graphics::Text::new(format!(
                 "Game over! You scored: {}\n\n[Enter] to play again.",
                 self.score()
             ));
 
-            score_display.set_bounds(
-                WINDOW_SIZE,
-                graphics::TextLayout::Wrap {
-                    h_align: graphics::TextAlign::Middle,
-                    v_align: graphics::TextAlign::Middle,
-                },
-            );
+            score_display.set_bounds(WINDOW_SIZE);
+            score_display.set_layout(graphics::TextLayout::center());
+            score_display.set_wrap(true);
 
-            canvas.draw(&score_display, graphics::DrawParam::from([0.0, 0.0]));
+            canvas.draw(&score_display, graphics::DrawParam::from(WINDOW_SIZE / 2.0));
 
             canvas
         };

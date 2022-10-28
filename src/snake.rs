@@ -43,8 +43,9 @@ impl Snake {
         &self.body
     }
 
-    /// Draws this `Snake` to the provided `canvas`. To be called as part of the [draw](ggez::event::EventHandler::draw) handler
-    /// provided by `ggez`.
+    /// Draws this `Snake` to the provided `canvas`.
+    /// To be called as part of the [draw](ggez::event::EventHandler::draw)
+    /// handler provided by `ggez`.
     pub fn draw(&self, canvas: &mut graphics::Canvas) {
         const BODY_COLOR: graphics::Color = graphics::Color::new(0.984, 0.749, 0.141, 1.0);
         const HEAD_COLOR: graphics::Color = graphics::Color::new(0.639, 0.902, 0.208, 1.0);
@@ -86,8 +87,8 @@ impl Snake {
         self.body.len() + 1
     }
 
-    /// Updates this snake for a new tick. To be called as part of the [draw](ggez::event::EventHandler::update) handler
-    /// provided by `ggez`.
+    /// Updates this snake for a new tick. To be called as part of the
+    /// [update](ggez::event::EventHandler::update) handler provided by `ggez`.
     pub fn update(&mut self, food: &Food) {
         if self.direction == self.direction_next {
             if let Some(next_dir) = self.direction_queued {

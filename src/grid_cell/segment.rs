@@ -1,4 +1,4 @@
-use glam::IVec2;
+use ggez::glam::IVec2;
 
 use super::GridCell;
 

@@ -5,8 +5,7 @@ pub(crate) use {food::Food, segment::Segment};
 
 use std::ops::Add;
 
-use ggez::graphics;
-use glam::IVec2;
+use ggez::{glam::IVec2, graphics};
 
 use crate::{direction::Direction, GRID_CELL_SIZE, GRID_SIZE};
 
